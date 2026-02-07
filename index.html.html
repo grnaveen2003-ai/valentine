@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe4e1;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            text-align: center;
+        }
+        #container {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        h1 { color: #d63384; }
+        .buttons { margin-top: 30px; }
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #yesBtn { background-color: #ff4d6d; color: white; margin-right: 10px; }
+        #noBtn { background-color: #6c757d; color: white; position: absolute; }
+        img { width: 200px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <div id="content">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHYwdWpud2ZidW14Z3BxdXByOHB6Nm54NGR6bmZ6Z3B6Nm54NGR6biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Cute Cat">
+            <h1 id="question">Alekhya chopperla Will you be my Valentine?</h1>
+            <div class="buttons">
+                <button id="yesBtn">Yes</button>
+                <button id="noBtn">No</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById("noBtn");
+        const yesBtn = document.getElementById("yesBtn");
+        const content = document.getElementById("content");
+
+        // Make the "No" button run away
+        noBtn.addEventListener("mouseover", () => {
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+            noBtn.style.left = `${x}px`;
+            noBtn.style.top = `${y}px`;
+        });
+
+        // When "Yes" is clicked
+        yesBtn.addEventListener("click", () => {
+            content.innerHTML = `
+                <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYW0wNG1qZ2pyZ21uNmx2NHo1Nzd1b251Z3I1ODI4cHBrdTFhOHUyeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ytu2GUYbvhz7zShGwS/giphy.gif">
+                <h1>YAY! ❤️ See you then!</h1>
+            `;
+            noBtn.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
